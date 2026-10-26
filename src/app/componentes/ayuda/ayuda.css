@@ -1,0 +1,125 @@
+/* Ayuda */
+.trust h2 {
+    margin-bottom: 2.5rem;
+}
+
+.trust-grid {
+    max-width: 900px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    margin: 0 auto;
+}
+
+.trust-card {
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: center;
+}
+
+.trust-icon {
+    display: block;
+    margin-bottom: 0.9rem;
+    color: var(--primary);
+    font-size: 1.6rem;
+}
+
+.trust-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.trust-card p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+.faq {
+    max-width: 900px;
+    margin: 2rem auto 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.faq h3 {
+    padding: 1rem 1.4rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.faq details {
+    border-top: 1px solid var(--border);
+}
+
+.faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 1rem 1.4rem;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "\f078";
+    color: var(--primary);
+    font-family: "Font Awesome 6 Free";
+    font-size: 0.85rem;
+    font-weight: 900;
+    transition: transform 0.2s ease;
+}
+
+.faq details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq details p {
+    padding: 0 1.4rem 1.1rem;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+}
+
+.help-contact {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.help-contact i {
+    margin-right: 0.3rem;
+    color: var(--primary);
+}
+
+.help-contact a {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.help-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+}

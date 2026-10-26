@@ -1,0 +1,66 @@
+<header class="site-header" id="inicio">
+  <div class="container header-inner">
+
+    <a href="#inicio" class="brand" aria-label="InvertU, ir al inicio" data-i18n-attr="aria-label:header.homeLabel">
+      <img src="img/logo.png" alt="Logo de InvertU" class="brand-logo" data-i18n-attr="alt:header.logoAlt">
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal" data-i18n-attr="aria-label:nav.label">
+      <a href="#inicio" class="active" data-i18n="nav.home">Inicio</a>
+      <a href="#beneficios" data-i18n="nav.benefits">Beneficios</a>
+      <a href="#asistente" data-i18n="nav.assistant">Asistente</a>
+      <a href="#testimonios" data-i18n="nav.testimonials">Testimonios</a>
+      <a href="#planes" data-i18n="nav.plans">Planes</a>
+      <a href="#ayuda" data-i18n="nav.help">Ayuda</a>
+    </nav>
+
+    <div class="header-ctas">
+
+      <a [href]="loginUrl" class="btn btn-ghost header-login" data-i18n="cta.login">Iniciar sesión</a>
+      <a [href]="registerUrl" class="btn btn-primary header-signup" data-i18n="cta.signup">Crear cuenta gratis</a>
+
+      <div class="lang-menu" id="lang-menu">
+        <button
+          type="button"
+          class="lang-toggle"
+          id="lang-toggle"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="lang-list"
+          aria-label="Idioma"
+          data-i18n-attr="aria-label:lang.label"
+        >
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span class="lang-current" id="lang-current">ES</span>
+          <i class="fa-solid fa-chevron-down lang-chevron" aria-hidden="true"></i>
+        </button>
+
+        <ul class="lang-list" id="lang-list" role="list" hidden>
+          <li>
+            <button type="button" class="lang-btn" data-lang="es" lang="es" aria-pressed="true">
+              <span class="lang-code" aria-hidden="true">ES</span> Español
+            </button>
+          </li>
+          <li>
+            <button type="button" class="lang-btn" data-lang="en" lang="en" aria-pressed="false">
+              <span class="lang-code" aria-hidden="true">EN</span> English
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        aria-label="Abrir menú"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+  </div>
+</header>

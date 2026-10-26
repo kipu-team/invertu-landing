@@ -1,0 +1,117 @@
+<section id="hero" class="hero section--cream">
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+            <span class="badge">
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                <span data-i18n="hero.badge">GESTIÓN FINANCIERA PARA ESTUDIANTES</span>
+            </span>
+
+            <h1>
+                <span data-i18n="hero.title">Toma el control de tu</span>
+                <span class="accent" data-i18n="hero.accent">futuro financiero</span>
+            </h1>
+
+            <p class="lead" data-i18n="hero.lead">
+                Organiza tus movimientos, planifica tus metas y toma el control de tu vida financiera de forma simple y segura, sin complicaciones bancarias.
+            </p>
+
+            <div class="hero-actions">
+              <a [href]="registerUrl" class="btn btn-primary btn-lg" data-i18n="cta.signup">Crear cuenta gratis</a>
+                <a href="#beneficios" class="btn btn-outline btn-lg" data-i18n="hero.explore">Explorar funciones</a>
+            </div>
+
+            <ul class="checklist" role="list">
+                <li data-i18n="hero.check1">Acceso desde tu navegador</li>
+                <li data-i18n="hero.check2">Registro simple y rápido</li>
+                <li data-i18n="hero.check3">Información siempre organizada</li>
+            </ul>
+
+        </div>
+
+        <div class="hero-visual">
+            <div class="dash" role="group" aria-label="Vista previa del panel de InvertU" data-i18n-attr="aria-label:dash.label">
+
+                <div class="dash-top">
+                    <div class="dash-available">
+                        <span data-i18n="dash.available">Disponible</span>
+                        <strong data-dash-value="available">S/ 320.00</strong>
+                    </div>
+
+                    <ul class="dash-summary" role="list">
+                        <li class="dash-row dash-row--income">
+                            <span data-i18n="dash.income">Ingresos</span>
+                            <span data-dash-value="income">S/ 1,540.00</span>
+                        </li>
+                        <li class="dash-row dash-row--expense">
+                            <span data-i18n="dash.expenses">Gastos</span>
+                            <span data-dash-value="expenses">S/ 900.00</span>
+                        </li>
+                        <li class="dash-row dash-row--goals">
+                            <span data-i18n="dash.goalsContrib">Aportes a metas</span>
+                            <span data-dash-value="contributions">S/ 320.00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dash-panel">
+
+                    <div class="dash-chart">
+                        <div class="chart-bars" role="img" aria-label="Gráfico de gastos por categoría: comida, transporte, suscripciones y ocio" data-i18n-attr="aria-label:dash.chartLabel">
+                            <div class="chart-col">
+                                <small class="chart-value" data-dash-category="food">380.00</small>
+                                <div class="chart-bar" data-dash-bar="food"></div>
+                                <small data-i18n="dash.catFood">Comida</small>
+                            </div>
+                            <div class="chart-col">
+                                <small class="chart-value" data-dash-category="transport">180.00</small>
+                                <div class="chart-bar" data-dash-bar="transport"></div>
+                                <small data-i18n="dash.catTransport">Transp.</small>
+                            </div>
+                            <div class="chart-col">
+                                <small class="chart-value" data-dash-category="subscriptions">140.00</small>
+                                <div class="chart-bar" data-dash-bar="subscriptions"></div>
+                                <small data-i18n="dash.catSubscriptions">Suscrip.</small>
+                            </div>
+                            <div class="chart-col">
+                                <small class="chart-value" data-dash-category="leisure">200.00</small>
+                                <div class="chart-bar" data-dash-bar="leisure"></div>
+                                <small data-i18n="dash.catLeisure">Ocio</small>
+                            </div>
+                        </div>
+
+                        <p class="chart-title" data-i18n="dash.chartTitle">Gastos por categoría</p>
+                    </div>
+
+                    <div class="dash-side">
+                        <p class="dash-label" data-i18n="dash.activeGoals">Metas activas</p>
+
+                        <div class="dash-goal">
+                            <div class="dash-goal-head">
+                                <span data-i18n="dash.goalName">Laptop Nueva</span>
+                                <strong data-dash-value="goal">68%</strong>
+                            </div>
+                            <div class="progress"><span class="progress-fill" id="dash-goal-fill"></span></div>
+                        </div>
+
+                        <p class="dash-label" data-i18n="dash.recent">Movimientos recientes</p>
+
+                        <div class="dash-move-slot">
+                            <div class="dash-move dash-move--expense" id="dash-move">
+                                <span class="dash-move-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span>
+                                <span data-i18n="dash.moveLunch">Almuerzo</span>
+                                <strong>-S/ 15.00</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="dash-note" data-i18n="dash.sample">Datos de ejemplo</p>
+        </div>
+
+    </div>
+</section>

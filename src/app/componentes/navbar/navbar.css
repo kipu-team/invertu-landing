@@ -1,0 +1,253 @@
+/* ==========================================
+   2. Header
+   ========================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(250, 248, 243, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  position: relative;
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: auto;
+  height: 42px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+
+  margin-left: auto;
+
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.main-nav a {
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.header-ctas {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lang-menu {
+  position: relative;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding: 0.45rem 0.7rem;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--text);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lang-toggle:hover {
+  border-color: var(--primary);
+}
+
+.lang-toggle .fa-globe {
+  color: var(--primary);
+}
+
+.lang-chevron {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.lang-toggle[aria-expanded="true"] .lang-chevron {
+  transform: rotate(180deg);
+}
+
+.lang-list {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  z-index: 110;
+
+  min-width: 150px;
+  padding: 0.35rem;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.lang-btn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.55rem 0.7rem;
+
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lang-btn:hover {
+  background: var(--bg-muted);
+}
+
+.lang-btn[aria-pressed="true"] {
+  background: var(--mint);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.lang-code {
+  min-width: 1.6rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.menu-toggle {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--deep);
+
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .menu-toggle {
+        display: grid;
+        place-items: center;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        margin: 0;
+        padding: 0.5rem 1rem 1rem;
+
+        background: var(--bg-cream);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 0.75rem 0.25rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .main-nav a:last-child {
+        border-bottom: 0;
+    }
+
+    .main-nav a.active {
+        border-color: var(--border);
+    }
+
+    .main-nav .lang-menu {
+        padding-top: 0.75rem;
+    }
+
+    .main-nav .lang-list {
+        left: 0;
+        right: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-inner {
+        min-height: 64px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-inner {
+        gap: 0.75rem;
+    }
+
+    .header-login {
+        display: none;
+    }
+
+    .header-ctas .btn {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.78rem;
+    }
+
+    .brand-logo {
+        height: 36px;
+    }
+}
+
+@media (max-width: 420px) {
+    .header-signup {
+        display: none;
+    }
+}

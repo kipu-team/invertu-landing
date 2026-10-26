@@ -1,0 +1,155 @@
+/* Beneficios */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+.benefit-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(11, 61, 46, 0.11);
+}
+
+.benefit-icon {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 1rem;
+
+    border-radius: 12px;
+    background: var(--mint);
+
+    font-size: 1.15rem;
+}
+
+.benefit-icon--green {
+    background: var(--mint);
+    color: var(--primary);
+}
+
+.benefit-icon--gold {
+    background: #fdf0c8;
+    color: #6d4f00;
+}
+
+.benefit-icon--gray {
+    background: #dfe7e2;
+    color: #376553;
+}
+
+.benefit-icon--red {
+    background: var(--red-soft);
+    color: var(--red);
+}
+
+.benefit-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.benefit-card p {
+    color: var(--text-muted);
+    font-size: 0.86rem;
+}
+
+.stats-strip {
+    max-width: 900px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: 2.5rem auto;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.stat {
+    padding: 1.25rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+    border-right: 0;
+}
+
+.stat small {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--text-muted);
+    font-size: 0.76rem;
+}
+
+.stat strong {
+    font-size: 1.15rem;
+}
+
+.stat .ok {
+    color: var(--primary);
+}
+
+.stat .bad {
+    color: var(--red);
+}
+
+.stat .mid {
+    color: #376553;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: 0;
+    }
+
+    .stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 420px) {
+    .stats-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+        border-bottom: 0;
+    }
+}

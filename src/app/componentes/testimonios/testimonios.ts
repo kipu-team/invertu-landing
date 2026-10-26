@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Idioma } from '../../idioma/idioma';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './testimonios.css',
   templateUrl: './testimonios.html',
 })
-export class Testimonios {}
+export class Testimonios {
+  idioma = inject(Idioma);
+}

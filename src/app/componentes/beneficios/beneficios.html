@@ -1,11 +1,9 @@
 <section id="beneficios" class="benefits section--muted">
     <div class="container">
 
-        <h2 data-i18n="benefits.title">Más claridad para tomar mejores decisiones</h2>
+        <h2>{{ idioma.t('benefits.title') }}</h2>
 
-        <p class="section-lead" data-i18n="benefits.lead">
-            Entendemos que manejar dinero como estudiante puede ser confuso. InvertU te da las herramientas para que sepas exactamente dónde estás parado.
-        </p>
+        <p class="section-lead">{{ idioma.t('benefits.lead') }}</p>
 
         <div class="benefits-grid">
 
@@ -13,57 +11,57 @@
                 <div class="benefit-icon benefit-icon--green">
                     <i class="fa-solid fa-wallet" aria-hidden="true"></i>
                 </div>
-                <h3 data-i18n="benefits.controlTitle">Control mensual</h3>
-                <p data-i18n="benefits.controlText">Conoce tu balance real al instante, separando lo que tienes de lo que ya gastaste.</p>
+                <h3>{{ idioma.t('benefits.controlTitle') }}</h3>
+                <p>{{ idioma.t('benefits.controlText') }}</p>
             </article>
 
             <article class="benefit-card">
                 <div class="benefit-icon benefit-icon--gold">
                     <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
                 </div>
-                <h3 data-i18n="benefits.analysisTitle">Análisis de gastos</h3>
-                <p data-i18n="benefits.analysisText">Clasifica tus gastos por categoría y mira en gráficos a dónde se va tu dinero.</p>
+                <h3>{{ idioma.t('benefits.analysisTitle') }}</h3>
+                <p>{{ idioma.t('benefits.analysisText') }}</p>
             </article>
 
             <article class="benefit-card">
                 <div class="benefit-icon benefit-icon--gray">
                     <i class="fa-solid fa-flag" aria-hidden="true"></i>
                 </div>
-                <h3 data-i18n="benefits.goalsTitle">Planificación de metas</h3>
-                <p data-i18n="benefits.goalsText">Define objetivos de ahorro y observa tu progreso de manera visual e inspiradora.</p>
+                <h3>{{ idioma.t('benefits.goalsTitle') }}</h3>
+                <p>{{ idioma.t('benefits.goalsText') }}</p>
             </article>
 
             <article class="benefit-card">
                 <div class="benefit-icon benefit-icon--red">
                     <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
                 </div>
-                <h3 data-i18n="benefits.paymentsTitle">Seguimiento de pagos</h3>
-                <p data-i18n="benefits.paymentsText">Registra tus suscripciones y recibe un aviso por correo antes de cada cobro.</p>
+                <h3>{{ idioma.t('benefits.paymentsTitle') }}</h3>
+                <p>{{ idioma.t('benefits.paymentsText') }}</p>
             </article>
 
         </div>
 
         <div class="stats-strip" role="list">
             <div class="stat" role="listitem">
-                <small data-i18n="stats.available">Disponible del mes</small>
+                <small>{{ idioma.t('stats.available') }}</small>
                 <strong class="ok">S/ 320.00</strong>
             </div>
             <div class="stat" role="listitem">
-                <small data-i18n="stats.spent">Gastado (mes)</small>
+                <small>{{ idioma.t('stats.spent') }}</small>
                 <strong class="bad">S/ 900.00</strong>
             </div>
             <div class="stat" role="listitem">
-                <small data-i18n="stats.goal">Meta principal</small>
+                <small>{{ idioma.t('stats.goal') }}</small>
                 <strong class="mid">68%</strong>
             </div>
             <div class="stat" role="listitem">
-                <small data-i18n="stats.subscriptions">Suscripciones</small>
+                <small>{{ idioma.t('stats.subscriptions') }}</small>
                 <strong class="ok">S/ 73.70</strong>
             </div>
         </div>
 
         <div class="center">
-          <a [href]="registerUrl" class="btn btn-primary btn-lg" data-i18n="benefits.cta">Comenzar a organizarme</a>
+          <a [href]="registerUrl" class="btn btn-primary btn-lg">{{ idioma.t('benefits.cta') }}</a>
         </div>
 
     </div>

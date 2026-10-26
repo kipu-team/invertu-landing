@@ -7,35 +7,35 @@
                 <a href="#inicio" class="footer-brand">InvertU</a>
 
                 <p class="footer-contact">
-                    <span class="visually-hidden" data-i18n="footer.contact">Contacto</span>
+                    <span class="visually-hidden">{{ idioma.t('footer.contact') }}</span>
                     <a href="mailto:invertuoficial@gmail.com">
                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                         invertuoficial@gmail.com
                     </a>
                     <span>
                         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                        <span data-i18n="footer.city">Lima, Perú</span>
+                        <span>{{ idioma.t('footer.city') }}</span>
                     </span>
                 </p>
             </div>
 
             <nav class="footer-nav" aria-label="Pie de página" data-i18n-attr="aria-label:footer.navLabel">
-                <a href="#inicio" data-i18n="nav.home">Inicio</a>
-                <a href="#beneficios" data-i18n="nav.benefits">Beneficios</a>
-                <a href="#asistente" data-i18n="nav.assistant">Asistente</a>
-                <a href="#planes" data-i18n="nav.plans">Planes</a>
-                <a href="#ayuda" data-i18n="nav.help">Ayuda</a>
+                <a href="#inicio">{{ idioma.t('nav.home') }}</a>
+                <a href="#beneficios">{{ idioma.t('nav.benefits') }}</a>
+                <a href="#asistente">{{ idioma.t('nav.assistant') }}</a>
+                <a href="#planes">{{ idioma.t('nav.plans') }}</a>
+                <a href="#ayuda">{{ idioma.t('nav.help') }}</a>
             </nav>
 
         </div>
 
         <div class="footer-bottom">
 
-            <small data-i18n="footer.copy">© 2026 InvertU. Empoderando el futuro financiero estudiantil.</small>
+            <small>{{ idioma.t('footer.copy') }}</small>
 
             <div class="footer-legal">
-                <a [href]="termsUrl" data-i18n="footer.terms">Términos y condiciones</a>
-                <a [href]="privacyUrl" data-i18n="footer.privacy">Política de privacidad</a>
+                <a [href]="termsUrl">{{ idioma.t('footer.terms') }}</a>
+                <a [href]="privacyUrl">{{ idioma.t('footer.privacy') }}</a>
             </div>
 
             <ul class="footer-social" role="list" aria-label="Redes sociales" data-i18n-attr="aria-label:footer.social">

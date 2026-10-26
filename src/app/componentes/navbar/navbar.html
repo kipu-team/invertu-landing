@@ -6,18 +6,18 @@
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Navegación principal" data-i18n-attr="aria-label:nav.label">
-      <a href="#inicio" class="active" data-i18n="nav.home">Inicio</a>
-      <a href="#beneficios" data-i18n="nav.benefits">Beneficios</a>
-      <a href="#asistente" data-i18n="nav.assistant">Asistente</a>
-      <a href="#testimonios" data-i18n="nav.testimonials">Testimonios</a>
-      <a href="#planes" data-i18n="nav.plans">Planes</a>
-      <a href="#ayuda" data-i18n="nav.help">Ayuda</a>
+      <a href="#inicio" class="active">{{ idioma.t('nav.home') }}</a>
+      <a href="#beneficios">{{ idioma.t('nav.benefits') }}</a>
+      <a href="#asistente">{{ idioma.t('nav.assistant') }}</a>
+      <a href="#testimonios">{{ idioma.t('nav.testimonials') }}</a>
+      <a href="#planes">{{ idioma.t('nav.plans') }}</a>
+      <a href="#ayuda">{{ idioma.t('nav.help') }}</a>
     </nav>
 
     <div class="header-ctas">
 
-      <a [href]="loginUrl" class="btn btn-ghost header-login" data-i18n="cta.login">Iniciar sesión</a>
-      <a [href]="registerUrl" class="btn btn-primary header-signup" data-i18n="cta.signup">Crear cuenta gratis</a>
+      <a [href]="loginUrl" class="btn btn-ghost header-login">{{ idioma.t('cta.login') }}</a>
+      <a [href]="registerUrl" class="btn btn-primary header-signup">{{ idioma.t('cta.signup') }}</a>
 
       <div class="lang-menu" id="lang-menu">
         <button

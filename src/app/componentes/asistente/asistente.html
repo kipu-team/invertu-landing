@@ -5,37 +5,35 @@
 
             <span class="badge badge--gold">
                 <i class="fa-solid fa-robot" aria-hidden="true"></i>
-                <span data-i18n="assistant.badge">ASISTENTE INTELIGENTE · PREMIUM</span>
+                <span>{{ idioma.t('assistant.badge') }}</span>
             </span>
 
-            <h2 data-i18n="assistant.title">Consulta tus finanzas usando palabras simples</h2>
+            <h2>{{ idioma.t('assistant.title') }}</h2>
 
-            <p data-i18n="assistant.text">
-                Pregúntale a InvertU por tus gastos, metas y suscripciones, y te responde con tus propios datos.
-            </p>
+            <p>{{ idioma.t('assistant.text') }}</p>
 
             <ul class="prompts" role="list">
                 <li>
                     <button type="button" class="prompt" data-chat="1" aria-pressed="true" aria-controls="chat-messages">
-                        <span data-i18n="assistant.q1">¿Cuánto gasté este mes en comida?</span>
+                        <span>{{ idioma.t('assistant.q1') }}</span>
                         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </li>
                 <li>
                     <button type="button" class="prompt" data-chat="2" aria-pressed="false" aria-controls="chat-messages">
-                        <span data-i18n="assistant.q2">¿Cuánto me falta para mi meta?</span>
+                        <span>{{ idioma.t('assistant.q2') }}</span>
                         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </li>
                 <li>
                     <button type="button" class="prompt" data-chat="3" aria-pressed="false" aria-controls="chat-messages">
-                        <span data-i18n="assistant.q3">¿Qué suscripciones me cobran esta semana?</span>
+                        <span>{{ idioma.t('assistant.q3') }}</span>
                         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </li>
             </ul>
 
-            <a href="#planes" class="btn btn-gold btn-lg" data-i18n="assistant.cta">Ver plan Premium</a>
+            <a href="#planes" class="btn btn-gold btn-lg">{{ idioma.t('assistant.cta') }}</a>
 
         </div>
 
@@ -46,17 +44,17 @@
                 <div class="chat-header">
                     <span class="chat-avatar"><i class="fa-solid fa-robot" aria-hidden="true"></i></span>
                     <div>
-                        <strong data-i18n="chat.name">Asistente InvertU</strong>
-                        <small data-i18n="chat.status">En línea</small>
+                        <strong>{{ idioma.t('chat.name') }}</strong>
+                        <small>{{ idioma.t('chat.status') }}</small>
                     </div>
                 </div>
 
                 <div class="chat-messages" id="chat-messages" aria-live="polite">
-                    <p class="chat-bubble chat-bubble--user" id="chat-question" data-i18n="assistant.q1">¿Cuánto gasté este mes en comida?</p>
+                    <p class="chat-bubble chat-bubble--user" id="chat-question">{{ idioma.t('assistant.q1') }}</p>
                     <div class="chat-bubble chat-bubble--bot chat-typing" id="chat-typing" aria-hidden="true" hidden>
                         <span></span><span></span><span></span>
                     </div>
-                    <p class="chat-bubble chat-bubble--bot" id="chat-answer" data-i18n="assistant.a1">Este mes llevas S/ 240.00 en comida, en 12 movimientos.</p>
+                    <p class="chat-bubble chat-bubble--bot" id="chat-answer">{{ idioma.t('assistant.a1') }}</p>
                 </div>
 
                 <div class="chat-input">

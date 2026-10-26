@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { appLink } from '../../config/app-links';
+import { Idioma } from '../../idioma/idioma';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { appLink } from '../../config/app-links';
   templateUrl: './cta-final.html',
 })
 export class CtaFinal {
+  idioma = inject(Idioma);
   registerUrl = appLink('register');
   loginUrl = appLink('login');
 }

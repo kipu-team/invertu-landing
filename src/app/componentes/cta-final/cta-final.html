@@ -2,11 +2,11 @@
     <div class="container final-grid">
 
         <div class="final-copy">
-            <h2 data-i18n="final.title">Empieza a tomar decisiones con información más clara</h2>
+            <h2>{{ idioma.t('final.title') }}</h2>
 
             <div class="cta-actions">
-                <a [href]="registerUrl" class="btn btn-white btn-lg" data-i18n="cta.signup">Crear cuenta gratis</a>
-                <a [href]="loginUrl" class="btn btn-outline-white btn-lg" data-i18n="cta.login">Iniciar sesión</a>
+                <a [href]="registerUrl" class="btn btn-white btn-lg">{{ idioma.t('cta.signup') }}</a>
+                <a [href]="loginUrl" class="btn btn-outline-white btn-lg">{{ idioma.t('cta.login') }}</a>
             </div>
         </div>
 

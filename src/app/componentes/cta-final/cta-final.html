@@ -1,7 +1,7 @@
 <section class="final-cta">
     <div class="container final-grid">
 
-        <div class="final-copy">
+        <div appReveal class="final-copy">
             <h2>{{ idioma.t('final.title') }}</h2>
 
             <div class="cta-actions">
@@ -10,11 +10,11 @@
             </div>
         </div>
 
-        <div class="final-visual">
+        <div appReveal class="final-visual">
             <img
                 src="img/cta-app.webp"
-                alt="Laptop con la app de InvertU abierta en la pantalla de movimientos"
-                data-i18n-attr="alt:final.imageAlt"
+               
+                [attr.alt]="idioma.t('final.imageAlt')"
                 loading="lazy"
             >
         </div>

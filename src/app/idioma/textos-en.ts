@@ -99,6 +99,8 @@ export const TEXTOS_EN: Record<string, string> = {
     "testimonials.title": "What do students say about InvertU?",
     "testimonials.lead": "Students like you who want to get their money in order.",
     "testimonials.dotsLabel": "Choose testimonial group",
+    "testimonials.prev": "Previous testimonials",
+    "testimonials.next": "Next testimonials",
     "testimonials.dot": "Show group {n} of {total}",
     "testimonials.andreaRole": "Economics student",
     "testimonials.andreaText": "\"I finally understand where my money goes every month. I ask the assistant how much I have spent and it answers right away.\"",

@@ -99,6 +99,8 @@ export const TEXTOS_ES: Record<string, string> = {
     "testimonials.title": "¿Qué dicen los estudiantes sobre InvertU?",
     "testimonials.lead": "Estudiantes como tú que quieren ordenar su dinero.",
     "testimonials.dotsLabel": "Elegir grupo de testimonios",
+    "testimonials.prev": "Testimonios anteriores",
+    "testimonials.next": "Testimonios siguientes",
     "testimonials.dot": "Mostrar grupo {n} de {total}",
     "testimonials.andreaRole": "Estudiante de Economía",
     "testimonials.andreaText": "\"Por fin entiendo a dónde se va mi dinero cada mes. Le pregunto al asistente cuánto llevo gastado y me responde al toque.\"",

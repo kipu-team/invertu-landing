@@ -1,4 +1,5 @@
-import { Service, signal } from '@angular/core';
+import { effect, inject, Service, signal } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { TEXTOS_ES } from './textos-es';
 import { TEXTOS_EN } from './textos-en';
 
@@ -6,10 +7,19 @@ const CLAVE_GUARDADO = 'invertu-language';
 
 @Service()
 export class Idioma {
+  private titulo = inject(Title);
+  private meta = inject(Meta);
+
   idioma = signal<'es' | 'en'>(this.leerGuardado());
 
   constructor() {
     document.documentElement.lang = this.idioma();
+
+    // Cada vez que cambia el idioma se actualizan el título y la descripción de la página
+    effect(() => {
+      this.titulo.setTitle(this.t('meta.title'));
+      this.meta.updateTag({ name: 'description', content: this.t('meta.description') });
+    });
   }
 
   cambiar(nuevo: 'es' | 'en') {

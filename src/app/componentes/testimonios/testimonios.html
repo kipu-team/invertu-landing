@@ -1,11 +1,15 @@
-<section id="testimonios" class="testimonials section--muted">
+<section id="testimonios" class="testimonials section--muted"
+         (pointerenter)="alEntrarMouse($event)" (pointerleave)="alSalirMouse($event)"
+         (focusin)="detenerAuto()" (focusout)="alPerderFoco($event)">
     <div class="container">
 
         <h2>{{ idioma.t('testimonials.title') }}</h2>
 
         <p class="section-lead">{{ idioma.t('testimonials.lead') }}</p>
 
-        <div class="testimonials-track" id="testimonials-track">
+        <div class="testimonials-carousel">
+        <div appReveal class="testimonials-track" id="testimonials-track" #pista
+             (scroll)="alDesplazar()" (touchstart)="alTocar($event)" (touchend)="alSoltar($event)">
 
             <article class="testimonial-card">
                 <div class="testimonial-user">
@@ -74,8 +78,29 @@
             </article>
 
         </div>
+            @if (paginas() > 1) {
+                <button type="button" class="carousel-arrow carousel-arrow--prev"
+                        [attr.aria-label]="idioma.t('testimonials.prev')" (click)="anterior()">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="carousel-arrow carousel-arrow--next"
+                        [attr.aria-label]="idioma.t('testimonials.next')" (click)="siguiente()">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            }
+        </div>
 
-        <div class="testimonials-dots" id="testimonials-dots" role="group" aria-label="Elegir grupo de testimonios" data-i18n-attr="aria-label:testimonials.dotsLabel"></div>
+        <div class="testimonials-dots" id="testimonials-dots" role="group" [attr.aria-label]="idioma.t('testimonials.dotsLabel')"
+             [hidden]="paginas() < 2" (keydown)="teclaPuntos($event)">
+            @for (punto of puntos(); track punto) {
+                <button type="button" class="dot"
+                        [class.is-active]="punto === actual()"
+                        [attr.aria-current]="punto === actual() ? 'true' : 'false'"
+                        [tabindex]="punto === actual() ? 0 : -1"
+                        [attr.aria-label]="textoPunto(punto)"
+                        (click)="irAPunto(punto)"></button>
+            }
+        </div>
 
     </div>
 </section>

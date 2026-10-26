@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { Idioma } from '../../idioma/idioma';
+import { Reveal } from '../../directivas/reveal';
 
 @Component({
-  imports: [],
+  imports: [Reveal],
   selector: 'app-ayuda',
   styleUrl: './ayuda.css',
   templateUrl: './ayuda.html',

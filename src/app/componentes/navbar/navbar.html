@@ -1,17 +1,20 @@
 <header class="site-header" id="inicio">
   <div class="container header-inner">
 
-    <a href="#inicio" class="brand" aria-label="InvertU, ir al inicio" data-i18n-attr="aria-label:header.homeLabel">
-      <img src="img/logo.png" alt="Logo de InvertU" class="brand-logo" data-i18n-attr="alt:header.logoAlt">
+    <a href="#hero" class="brand" (click)="irAlInicio($event)" [attr.aria-label]="idioma.t('header.homeLabel')">
+      <img src="img/logo.png" class="brand-logo" [attr.alt]="idioma.t('header.logoAlt')">
     </a>
 
-    <nav class="main-nav" id="main-nav" aria-label="Navegación principal" data-i18n-attr="aria-label:nav.label">
-      <a href="#inicio" class="active">{{ idioma.t('nav.home') }}</a>
-      <a href="#beneficios">{{ idioma.t('nav.benefits') }}</a>
-      <a href="#asistente">{{ idioma.t('nav.assistant') }}</a>
-      <a href="#testimonios">{{ idioma.t('nav.testimonials') }}</a>
-      <a href="#planes">{{ idioma.t('nav.plans') }}</a>
-      <a href="#ayuda">{{ idioma.t('nav.help') }}</a>
+    <nav class="main-nav" id="main-nav" [class.open]="menuAbierto()" [attr.aria-label]="idioma.t('nav.label')">
+      <a href="#hero" [class.active]="seccionActiva() === 'inicio'" (click)="irAlInicio($event)">{{ idioma.t('nav.home') }}</a>
+      <a href="#beneficios" [class.active]="seccionActiva() === 'beneficios'" (click)="cerrarMenu()">{{ idioma.t('nav.benefits') }}</a>
+      <a href="#asistente" [class.active]="seccionActiva() === 'asistente'" (click)="cerrarMenu()">{{ idioma.t('nav.assistant') }}</a>
+      <a href="#testimonios" [class.active]="seccionActiva() === 'testimonios'" (click)="cerrarMenu()">{{ idioma.t('nav.testimonials') }}</a>
+      <a href="#planes" [class.active]="seccionActiva() === 'planes'" (click)="cerrarMenu()">{{ idioma.t('nav.plans') }}</a>
+      <a href="#ayuda" [class.active]="seccionActiva() === 'ayuda'" (click)="cerrarMenu()">{{ idioma.t('nav.help') }}</a>
+      @if (esMovil()) {
+        <ng-container [ngTemplateOutlet]="menuIdioma" />
+      }
     </nav>
 
     <div class="header-ctas">
@@ -19,6 +22,28 @@
       <a [href]="loginUrl" class="btn btn-ghost header-login">{{ idioma.t('cta.login') }}</a>
       <a [href]="registerUrl" class="btn btn-primary header-signup">{{ idioma.t('cta.signup') }}</a>
 
+      @if (!esMovil()) {
+        <ng-container [ngTemplateOutlet]="menuIdioma" />
+      }
+
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-controls="main-nav"
+        [attr.aria-expanded]="menuAbierto()"
+        [attr.aria-label]="idioma.t(menuAbierto() ? 'menu.close' : 'menu.open')"
+        (click)="alternarMenu()"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+<ng-template #menuIdioma>
       <div class="lang-menu" id="lang-menu">
         <button
           type="button"
@@ -27,8 +52,8 @@
           aria-haspopup="true"
           [attr.aria-expanded]="menuIdiomaAbierto()"
           aria-controls="lang-list"
-          aria-label="Idioma"
-          data-i18n-attr="aria-label:lang.label"
+         
+          [attr.aria-label]="idioma.t('lang.label')"
           (click)="alternarMenuIdioma()"
         >
           <i class="fa-solid fa-globe" aria-hidden="true"></i>
@@ -53,19 +78,4 @@
           </li>
         </ul>
       </div>
-
-      <button
-        type="button"
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-controls="main-nav"
-        aria-expanded="false"
-        aria-label="Abrir menú"
-      >
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-
-    </div>
-
-  </div>
-</header>
+</ng-template>

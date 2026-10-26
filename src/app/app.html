@@ -8,3 +8,4 @@
 <app-cta-final></app-cta-final>
 <app-footer></app-footer>
 <router-outlet />
+<div id="status-message" class="status-message" role="status" aria-live="polite" [class.is-visible]="aviso.visible()">{{ aviso.texto() }}</div>

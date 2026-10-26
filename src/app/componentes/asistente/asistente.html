@@ -1,7 +1,7 @@
 <section id="asistente" class="assistant section--dark">
     <div class="container assistant-grid">
 
-        <div class="assistant-copy">
+        <div appReveal class="assistant-copy">
 
             <span class="badge badge--gold">
                 <i class="fa-solid fa-robot" aria-hidden="true"></i>
@@ -14,19 +14,19 @@
 
             <ul class="prompts" role="list">
                 <li>
-                    <button type="button" class="prompt" data-chat="1" aria-pressed="true" aria-controls="chat-messages">
+                    <button type="button" class="prompt" [attr.aria-pressed]="pregunta() === 1" aria-controls="chat-messages" (click)="elegir(1)">
                         <span>{{ idioma.t('assistant.q1') }}</span>
                         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="prompt" data-chat="2" aria-pressed="false" aria-controls="chat-messages">
+                    <button type="button" class="prompt" [attr.aria-pressed]="pregunta() === 2" aria-controls="chat-messages" (click)="elegir(2)">
                         <span>{{ idioma.t('assistant.q2') }}</span>
                         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="prompt" data-chat="3" aria-pressed="false" aria-controls="chat-messages">
+                    <button type="button" class="prompt" [attr.aria-pressed]="pregunta() === 3" aria-controls="chat-messages" (click)="elegir(3)">
                         <span>{{ idioma.t('assistant.q3') }}</span>
                         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </button>
@@ -37,9 +37,9 @@
 
         </div>
 
-        <div class="assistant-visual">
+        <div appReveal class="assistant-visual">
 
-            <div class="chat" role="group" aria-label="Ejemplo de conversación con el asistente" data-i18n-attr="aria-label:chat.label">
+            <div class="chat" role="group" [attr.aria-label]="idioma.t('chat.label')">
 
                 <div class="chat-header">
                     <span class="chat-avatar"><i class="fa-solid fa-robot" aria-hidden="true"></i></span>
@@ -50,22 +50,26 @@
                 </div>
 
                 <div class="chat-messages" id="chat-messages" aria-live="polite">
-                    <p class="chat-bubble chat-bubble--user" id="chat-question">{{ idioma.t('assistant.q1') }}</p>
-                    <div class="chat-bubble chat-bubble--bot chat-typing" id="chat-typing" aria-hidden="true" hidden>
+                    @for (v of [versionPregunta()]; track v) {
+                        <p class="chat-bubble chat-bubble--user" id="chat-question" [class.is-new]="v > 0">{{ idioma.t('assistant.q' + pregunta()) }}</p>
+                    }
+                    <div class="chat-bubble chat-bubble--bot chat-typing" id="chat-typing" aria-hidden="true" [hidden]="!escribiendo()">
                         <span></span><span></span><span></span>
                     </div>
-                    <p class="chat-bubble chat-bubble--bot" id="chat-answer">{{ idioma.t('assistant.a1') }}</p>
+                    @for (v of [versionRespuesta()]; track v) {
+                        <p class="chat-bubble chat-bubble--bot" id="chat-answer" [class.is-new]="v > 0" [hidden]="escribiendo()">{{ idioma.t('assistant.a' + pregunta()) }}</p>
+                    }
                 </div>
 
                 <div class="chat-input">
                     <input
                         type="text"
-                        placeholder="Escribe un mensaje..."
-                        aria-label="Campo de mensaje (solo demostración)"
-                        data-i18n-attr="placeholder:chat.placeholder, aria-label:chat.inputLabel"
+                       
+                       
+                        [attr.placeholder]="idioma.t('chat.placeholder')" [attr.aria-label]="idioma.t('chat.inputLabel')"
                         disabled
                     >
-                    <button type="button" aria-label="Enviar (solo demostración)" data-i18n-attr="aria-label:chat.send" disabled>
+                    <button type="button" [attr.aria-label]="idioma.t('chat.send')" disabled>
                         <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -74,9 +78,9 @@
 
             <img
                 src="img/mascot.png"
-                alt="Mascota de InvertU saludando"
-                class="mascot"
-                data-i18n-attr="alt:chat.mascotAlt"
+               
+                class="mascot" [class.is-bouncing]="rebota()" (animationend)="alTerminarAnimacion($event)"
+                [attr.alt]="idioma.t('chat.mascotAlt')"
             >
 
         </div>

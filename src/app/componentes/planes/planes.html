@@ -7,7 +7,7 @@
 
         <div class="pricing-grid">
 
-            <article class="price-card">
+            <article appReveal class="price-card">
                 <h3>{{ idioma.t('plans.freeName') }}</h3>
                 <div class="price">S/ 0 <span>{{ idioma.t('plans.perMonth') }}</span></div>
                 <ul>
@@ -19,7 +19,7 @@
                 <a [href]="registerUrl" class="btn btn-outline">{{ idioma.t('cta.signup') }}</a>
             </article>
 
-            <article class="price-card price-card-featured">
+            <article appReveal class="price-card price-card-featured">
                 <span class="recommended">{{ idioma.t('plans.recommended') }}</span>
                 <h3>{{ idioma.t('plans.premiumName') }}</h3>
                 <div class="price">S/ 9.90 <span>{{ idioma.t('plans.perMonth') }}</span></div>

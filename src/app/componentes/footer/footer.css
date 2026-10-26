@@ -111,18 +111,6 @@
     color: var(--white);
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(28px);
-}
-
-.reveal.is-visible {
-    opacity: 1;
-    transform: none;
-    transition:
-        opacity 0.6s ease,
-        transform 0.6s ease;
-}
 
 
 /* Responsive */

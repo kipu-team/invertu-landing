@@ -29,26 +29,27 @@
         </div>
 
         <div class="hero-visual">
-            <div class="dash" role="group" aria-label="Vista previa del panel de InvertU" data-i18n-attr="aria-label:dash.label">
+            <div class="dash" #panel role="group" [attr.aria-label]="idioma.t('dash.label')"
+                 [class.will-animate]="!reducirMovimiento" [class.is-animated]="animado()">
 
                 <div class="dash-top">
                     <div class="dash-available">
                         <span>{{ idioma.t('dash.available') }}</span>
-                        <strong data-dash-value="available">S/ 320.00</strong>
+                        <strong>{{ dinero(mostrado()['available']) }}</strong>
                     </div>
 
                     <ul class="dash-summary" role="list">
                         <li class="dash-row dash-row--income">
                             <span>{{ idioma.t('dash.income') }}</span>
-                            <span data-dash-value="income">S/ 1,540.00</span>
+                            <span>{{ dinero(mostrado()['income']) }}</span>
                         </li>
                         <li class="dash-row dash-row--expense">
                             <span>{{ idioma.t('dash.expenses') }}</span>
-                            <span data-dash-value="expenses">S/ 900.00</span>
+                            <span>{{ dinero(mostrado()['expenses']) }}</span>
                         </li>
                         <li class="dash-row dash-row--goals">
                             <span>{{ idioma.t('dash.goalsContrib') }}</span>
-                            <span data-dash-value="contributions">S/ 320.00</span>
+                            <span>{{ dinero(mostrado()['contributions']) }}</span>
                         </li>
                     </ul>
                 </div>
@@ -56,25 +57,25 @@
                 <div class="dash-panel">
 
                     <div class="dash-chart">
-                        <div class="chart-bars" role="img" aria-label="Gráfico de gastos por categoría: comida, transporte, suscripciones y ocio" data-i18n-attr="aria-label:dash.chartLabel">
+                        <div class="chart-bars" role="img" [attr.aria-label]="idioma.t('dash.chartLabel')">
                             <div class="chart-col">
-                                <small class="chart-value" data-dash-category="food">380.00</small>
-                                <div class="chart-bar" data-dash-bar="food"></div>
+                                <small class="chart-value">{{ monto(mostrado()['food']) }}</small>
+                                <div class="chart-bar" [style.height.%]="altura('food')"></div>
                                 <small>{{ idioma.t('dash.catFood') }}</small>
                             </div>
                             <div class="chart-col">
-                                <small class="chart-value" data-dash-category="transport">180.00</small>
-                                <div class="chart-bar" data-dash-bar="transport"></div>
+                                <small class="chart-value">{{ monto(mostrado()['transport']) }}</small>
+                                <div class="chart-bar" [style.height.%]="altura('transport')"></div>
                                 <small>{{ idioma.t('dash.catTransport') }}</small>
                             </div>
                             <div class="chart-col">
-                                <small class="chart-value" data-dash-category="subscriptions">140.00</small>
-                                <div class="chart-bar" data-dash-bar="subscriptions"></div>
+                                <small class="chart-value">{{ monto(mostrado()['subscriptions']) }}</small>
+                                <div class="chart-bar" [style.height.%]="altura('subscriptions')"></div>
                                 <small>{{ idioma.t('dash.catSubscriptions') }}</small>
                             </div>
                             <div class="chart-col">
-                                <small class="chart-value" data-dash-category="leisure">200.00</small>
-                                <div class="chart-bar" data-dash-bar="leisure"></div>
+                                <small class="chart-value">{{ monto(mostrado()['leisure']) }}</small>
+                                <div class="chart-bar" [style.height.%]="altura('leisure')"></div>
                                 <small>{{ idioma.t('dash.catLeisure') }}</small>
                             </div>
                         </div>
@@ -88,18 +89,22 @@
                         <div class="dash-goal">
                             <div class="dash-goal-head">
                                 <span>{{ idioma.t('dash.goalName') }}</span>
-                                <strong data-dash-value="goal">68%</strong>
+                                <strong>{{ mostrado()['goal'] }}%</strong>
                             </div>
-                            <div class="progress"><span class="progress-fill" id="dash-goal-fill"></span></div>
+                            <div class="progress"><span class="progress-fill" [style.width.%]="estado().goal"></span></div>
                         </div>
 
                         <p class="dash-label">{{ idioma.t('dash.recent') }}</p>
 
                         <div class="dash-move-slot">
-                            <div class="dash-move dash-move--expense" id="dash-move">
-                                <span class="dash-move-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span>
-                                <span>{{ idioma.t('dash.moveLunch') }}</span>
-                                <strong>-S/ 15.00</strong>
+                            <div class="dash-move" id="dash-move"
+                                 [class.dash-move--expense]="movimiento().type === 'expense'"
+                                 [class.dash-move--income]="movimiento().type === 'income'"
+                                 [class.dash-move--goal]="movimiento().type === 'goal'"
+                                 [class.is-leaving]="saliendo()" [class.is-entering]="entrando()">
+                                <span class="dash-move-icon"><i [class]="'fa-solid ' + movimiento().icon" aria-hidden="true"></i></span>
+                                <span>{{ idioma.t(movimiento().key) }}</span>
+                                <strong>{{ movimiento().type === 'income' ? '+' : '-' }}{{ dinero(movimiento().amount) }}</strong>
                             </div>
                         </div>
                     </div>

@@ -25,24 +25,29 @@
           class="lang-toggle"
           id="lang-toggle"
           aria-haspopup="true"
-          aria-expanded="false"
+          [attr.aria-expanded]="menuIdiomaAbierto()"
           aria-controls="lang-list"
           aria-label="Idioma"
           data-i18n-attr="aria-label:lang.label"
+          (click)="alternarMenuIdioma()"
         >
           <i class="fa-solid fa-globe" aria-hidden="true"></i>
-          <span class="lang-current" id="lang-current">ES</span>
+          <span class="lang-current" id="lang-current">{{ idioma.idioma().toUpperCase() }}</span>
           <i class="fa-solid fa-chevron-down lang-chevron" aria-hidden="true"></i>
         </button>
 
-        <ul class="lang-list" id="lang-list" role="list" hidden>
+        <ul class="lang-list" id="lang-list" role="list" [hidden]="!menuIdiomaAbierto()">
           <li>
-            <button type="button" class="lang-btn" data-lang="es" lang="es" aria-pressed="true">
+            <button type="button" class="lang-btn" lang="es"
+                    [attr.aria-pressed]="idioma.idioma() === 'es'"
+                    (click)="elegir('es')">
               <span class="lang-code" aria-hidden="true">ES</span> Español
             </button>
           </li>
           <li>
-            <button type="button" class="lang-btn" data-lang="en" lang="en" aria-pressed="false">
+            <button type="button" class="lang-btn" lang="en"
+                    [attr.aria-pressed]="idioma.idioma() === 'en'"
+                    (click)="elegir('en')">
               <span class="lang-code" aria-hidden="true">EN</span> English
             </button>
           </li>

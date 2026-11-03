@@ -2,7 +2,7 @@
 export const APP_URL:string = '';
 
 const APP_ROUTES: Record<string, string> = {
-  login: '/login',
+  login: '/iniciar-sesion',
   register: '/registro',
   terms: '/terminos',
   privacy: '/privacidad',

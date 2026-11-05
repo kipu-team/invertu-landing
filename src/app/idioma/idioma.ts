@@ -19,6 +19,14 @@ export class Idioma {
     effect(() => {
       this.titulo.setTitle(this.t('meta.title'));
       this.meta.updateTag({ name: 'description', content: this.t('meta.description') });
+      // Open Graph: vista previa al compartir el enlace (WhatsApp, Facebook, LinkedIn).
+      // Los valores en español están en index.html; aquí se traducen al cambiar el idioma.
+      this.meta.updateTag({ property: 'og:title', content: this.t('meta.title') });
+      this.meta.updateTag({ property: 'og:description', content: this.t('meta.description') });
+      this.meta.updateTag({
+        property: 'og:locale',
+        content: this.idioma() === 'es' ? 'es_PE' : 'en_US',
+      });
     });
   }
 

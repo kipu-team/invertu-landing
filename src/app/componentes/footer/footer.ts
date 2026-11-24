@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { appLink } from '../../config/app-links';
 import { Idioma } from '../../idioma/idioma';
 
 
@@ -11,6 +10,7 @@ import { Idioma } from '../../idioma/idioma';
 })
 export class Footer {
   idioma = inject(Idioma);
-  termsUrl = appLink('terms');
-  privacyUrl = appLink('privacy');
+  // Páginas estáticas de la propia landing (carpeta public/), relativas al base href
+  termsUrl = 'terminos.html';
+  privacyUrl = 'privacidad.html';
 }

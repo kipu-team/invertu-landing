@@ -1,5 +1,5 @@
 // Aquí va la URL de la app cuando esté publicada
-export const APP_URL:string = '';
+export const APP_URL:string = 'http://invertu-frontend-kipu.s3-website-us-east-1.amazonaws.com';
 
 const APP_ROUTES: Record<string, string> = {
   login: '/iniciar-sesion',
